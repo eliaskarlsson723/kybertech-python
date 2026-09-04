@@ -18,3 +18,5 @@ for vm in resources:
 
 print("Antal VM som är igång:", running)
 print("Total kostnad:", total_cost, "kr")
+
+print ("1234")
