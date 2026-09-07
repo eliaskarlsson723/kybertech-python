@@ -1,1 +1,29 @@
-Hej Hej
+# KyberTech Python
+
+## Version 1.0
+
+### Syfte
+Programmet analyserar resursdata för virtuella servrar (VM:ar).
+
+### Funktioner
+- Visar VM-namn, status och kostnad
+- Räknar antal VM:ar som är igång
+- Beräknar total kostnad
+- Identifierar den dyraste VM:n
+
+### Exempel på resultat
+
+VM-01 - Running - 1200 kr
+VM-02 - Stopped - 800 kr
+VM-03 - Running - 1500 kr
+
+Antal VM som är igång: 2
+Total kostnad: 3500 kr
+
+Dyraste VM:
+VM-03 - 1500 kr
+
+### Kommande utveckling
+- Importera data från fil (CSV eller JSON)
+- Hämta data från Azure
+- Presentera resultat i SharePoint-dashboard
