@@ -19,4 +19,11 @@ for vm in resources:
 print("Antal VM som är igång:", running)
 print("Total kostnad:", total_cost, "kr")
 
-print ("1234")
+most_expensive = resources[0]
+
+for vm in resources:
+    if vm["cost"] > most_expensive["cost"]:
+        most_expensive = vm
+
+print("Dyraste VM:")
+print(most_expensive["name"], "-", most_expensive["cost"], "kr")
