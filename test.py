@@ -1,8 +1,7 @@
-resources = [
-    {"name": "VM-01", "status": "Running", "cost": 1200},
-    {"name": "VM-02", "status": "Stopped", "cost": 800},
-    {"name": "VM-03", "status": "Running", "cost": 1500}
-]
+import json
+
+with open("resources.json", "r") as file:
+    resources = json.load(file)
 
 for vm in resources:
     print(vm["name"], "-", vm["status"], "-", vm["cost"], "kr")
