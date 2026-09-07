@@ -34,3 +34,8 @@ VM-03 - 1500 kr
 - Flyttade resursdata till en JSON-fil.
 - Programmet läser nu data från fil istället för hårdkodad information.
 - Förbereder lösningen för framtida Azure-integration.
+
+Kommande utveckling
+- Importera data från fil (CSV eller JSON)
+- Hämta data från Azure
+- Presentera resultat i SharePoint-dashboard
