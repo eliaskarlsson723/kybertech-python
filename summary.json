@@ -1,5 +1,6 @@
 {
     "running_vms": 3,
+    "stopped_vms": 2,
     "total_cost": 5100,
     "most_expensive_vm": "VM-03"
 }

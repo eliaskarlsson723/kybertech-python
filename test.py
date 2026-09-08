@@ -7,15 +7,18 @@ for vm in resources:
     print(vm["name"], "-", vm["status"], "-", vm["cost"], "kr")
 
 running = 0
+stopped = 0
 total_cost = 0
 
 for vm in resources:
     if vm["status"] == "Running":
         running += 1
-
+    if vm ["status"] == "Stopped":
+        stopped += 1
     total_cost += vm["cost"]
 
 print("Antal VM som är igång:", running)
+print("Antal VM som är stoppade:", stopped)
 print("Total kostnad:", total_cost, "kr")
 
 most_expensive = resources[0]
@@ -29,6 +32,7 @@ print(most_expensive["name"], "-", most_expensive["cost"], "kr")
 
 summary = {
     "running_vms": running,
+    "stopped_vms": stopped,
     "total_cost": total_cost,
     "most_expensive_vm": most_expensive["name"]
 }
