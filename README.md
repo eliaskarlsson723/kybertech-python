@@ -62,6 +62,7 @@ Kommande utveckling
 - Resultatet visas i terminalen.
 - Genomsnittlig kostnad exporteras till summary.json.
 
+
 ### Exempel på resultat
 
 ```json
