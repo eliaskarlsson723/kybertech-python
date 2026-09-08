@@ -21,6 +21,10 @@ print("Antal VM som är igång:", running)
 print("Antal VM som är stoppade:", stopped)
 print("Total kostnad:", total_cost, "kr")
 
+average_cost = total_cost / len(resources)
+
+print("Genomsnittlig kostnad per VM:", average_cost, "kr")
+
 most_expensive = resources[0]
 
 for vm in resources:
@@ -34,6 +38,7 @@ summary = {
     "running_vms": running,
     "stopped_vms": stopped,
     "total_cost": total_cost,
+    "average_cost": average_cost,
     "most_expensive_vm": most_expensive["name"]
 }
 
