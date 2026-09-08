@@ -53,3 +53,22 @@ Kommande utveckling
 - Programmet räknar antal stoppade VM:ar.
 - Resultatet visas i terminalen.
 - Värdet exporteras även till summary.json.
+
+
+## Version 1.4
+
+### Nytt
+- Programmet beräknar genomsnittlig kostnad per VM.
+- Resultatet visas i terminalen.
+- Genomsnittlig kostnad exporteras till summary.json.
+
+### Exempel på resultat
+
+```json
+{
+    "running_vms": 3,
+    "stopped_vms": 2,
+    "total_cost": 5100,
+    "average_cost": 1020.0,
+    "most_expensive_vm": "VM-03"
+}
