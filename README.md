@@ -65,15 +65,15 @@ Kommande utveckling
 ## Version 1.5 
 
 ### Nytt
--Programmet identifierar nua VM:ar med hög kostnad.
--VM:ar som kostar över 1000 kr markeras.
--Resultatet sparas i summary.json.
--Ger underlag för kostnadsoptimering i en framtida dashboard.
+- Programmet identifierar nua VM:ar med hög kostnad.
+- VM:ar som kostar över 1000 kr markeras.
+- Resultatet sparas i summary.json.
+- Ger underlag för kostnadsoptimering i en framtida dashboard.
 
 ## Version 1.6
 
 ### Nytt
 
--Programmet bedömer miljöns hälsostatus.
--Om en eller flera VM:ar är stoppade markeras miljön som Warning.
--Status exporteras till summary.json.
+- Programmet bedömer miljöns hälsostatus.
+- Om en eller flera VM:ar är stoppade markeras miljön som Warning.
+- Status exporteras till summary.json.
