@@ -72,3 +72,12 @@ Kommande utveckling
     "average_cost": 1020.0,
     "most_expensive_vm": "VM-03"
 }
+
+
+## Version 1.5
+
+### Nytt
+- Programmet identifierar VM:ar med hög kostnad.
+- VM:ar som kostar över 1000 kr markeras.
+- Resultatet sparas i summary.json.
+- Ger underlag för kostnadsoptimering i en framtida dashboard.
