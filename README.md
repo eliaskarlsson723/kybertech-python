@@ -39,3 +39,10 @@ Kommande utveckling
 - Importera data från fil (CSV eller JSON)
 - Hämta data från Azure
 - Presentera resultat i SharePoint-dashboard
+
+## Version 1.2
+
+### Nytt
+- Programmet genererar en sammanfattningsfil.
+- Analysresultat exporteras till summary.json.
+- Förbereder integration med dashboard.
