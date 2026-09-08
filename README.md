@@ -65,7 +65,7 @@ Kommande utveckling
 ## Version 1.5 
 
 ### Nytt
-- Programmet identifierar nua VM:ar med hög kostnad.
+- Programmet identifierar nu VM:ar med hög kostnad.
 - VM:ar som kostar över 1000 kr markeras.
 - Resultatet sparas i summary.json.
 - Ger underlag för kostnadsoptimering i en framtida dashboard.
