@@ -26,3 +26,12 @@ for vm in resources:
 
 print("Dyraste VM:")
 print(most_expensive["name"], "-", most_expensive["cost"], "kr")
+
+summary = {
+    "running_vms": running,
+    "total_cost": total_cost,
+    "most_expensive_vm": most_expensive["name"]
+}
+
+with open("summary.json", "w") as file:
+    json.dump(summary, file, indent=4)
