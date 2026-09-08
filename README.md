@@ -46,3 +46,10 @@ Kommande utveckling
 - Programmet genererar en sammanfattningsfil.
 - Analysresultat exporteras till summary.json.
 - Förbereder integration med dashboard.
+
+## Version 1.3
+
+### Nytt
+- Programmet räknar antal stoppade VM:ar.
+- Resultatet visas i terminalen.
+- Värdet exporteras även till summary.json.
