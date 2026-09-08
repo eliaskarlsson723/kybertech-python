@@ -34,12 +34,22 @@ for vm in resources:
 print("Dyraste VM:")
 print(most_expensive["name"], "-", most_expensive["cost"], "kr")
 
+print("VM med hög kostnad:")
+
+high_cost_vms = []
+
+for vm in resources:
+    if vm["cost"] > 1000:
+        high_cost_vms.append(vm["name"])
+        print("-", vm["name"], "-", vm["cost"], "kr")
+
 summary = {
     "running_vms": running,
     "stopped_vms": stopped,
     "total_cost": total_cost,
     "average_cost": average_cost,
-    "most_expensive_vm": most_expensive["name"]
+    "most_expensive_vm": most_expensive["name"],
+    "high_cost_vms": high_cost_vms
 }
 
 with open("summary.json", "w") as file:
