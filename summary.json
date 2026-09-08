@@ -7,5 +7,6 @@
     "high_cost_vms": [
         "VM-01",
         "VM-03"
-    ]
+    ],
+    "health_status": "Warning"
 }
