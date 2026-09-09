@@ -62,30 +62,27 @@ Kommande utveckling
 - Resultatet visas i terminalen.
 - Genomsnittlig kostnad exporteras till summary.json.
 
-### Exempel på resultat
-
-```json
-{
-    "running_vms": 3,
-    "stopped_vms": 2,
-    "total_cost": 5100,
-    "average_cost": 1020.0,
-    "most_expensive_vm": "VM-03"
-}
-
-
-## Version 1.5
+## Version 1.5 
 
 ### Nytt
-- Programmet identifierar VM:ar med hög kostnad.
+- Programmet identifierar nu VM:ar med hög kostnad.
 - VM:ar som kostar över 1000 kr markeras.
 - Resultatet sparas i summary.json.
 - Ger underlag för kostnadsoptimering i en framtida dashboard.
 
-
 ## Version 1.6
 
 ### Nytt
+
 - Programmet bedömer miljöns hälsostatus.
 - Om en eller flera VM:ar är stoppade markeras miljön som Warning.
 - Status exporteras till summary.json.
+
+
+## Version 1.7
+
+### Nytt
+- Beräknar kostnad för Running VM.
+- Beräknar kostnad för Stopped VM.
+- Exporterar kostnadsfördelningen till summary.json.
+- Ger bättre underlag för kostnadsanalys och optimering.
