@@ -77,3 +77,12 @@ Kommande utveckling
 - Programmet bedömer miljöns hälsostatus.
 - Om en eller flera VM:ar är stoppade markeras miljön som Warning.
 - Status exporteras till summary.json.
+
+
+## Version 1.7
+
+### Nytt
+- Beräknar kostnad för Running VM.
+- Beräknar kostnad för Stopped VM.
+- Exporterar kostnadsfördelningen till summary.json.
+- Ger bättre underlag för kostnadsanalys och optimering.
