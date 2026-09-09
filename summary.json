@@ -1,6 +1,8 @@
 {
     "running_vms": 3,
     "stopped_vms": 2,
+    "running_cost": 3600,
+    "stopped_cost": 1500,
     "total_cost": 5100,
     "average_cost": 1020.0,
     "most_expensive_vm": "VM-03",

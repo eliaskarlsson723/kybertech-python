@@ -10,16 +10,23 @@ running = 0
 stopped = 0
 total_cost = 0
 
+running_cost = 0
+stopped_cost = 0
+
 for vm in resources:
     if vm["status"] == "Running":
         running += 1
+        running_cost += vm["cost"]
     if vm ["status"] == "Stopped":
         stopped += 1
+        stopped_cost += vm["cost"]
     total_cost += vm["cost"]
 
 print("Antal VM som är igång:", running)
 print("Antal VM som är stoppade:", stopped)
 print("Total kostnad:", total_cost, "kr")
+print("Total kostnad för Running VM:", running_cost, "kr")
+print("Total kostnad för Stopped VM:", stopped_cost, "kr")
 
 average_cost = total_cost / len(resources)
 
@@ -53,6 +60,8 @@ print("Miljöstatus:", health_status)
 summary = {
     "running_vms": running,
     "stopped_vms": stopped,
+    "running_cost": running_cost,
+    "stopped_cost": stopped_cost,
     "total_cost": total_cost,
     "average_cost": average_cost,
     "most_expensive_vm": most_expensive["name"],
