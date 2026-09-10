@@ -129,3 +129,11 @@ Kommande utveckling
 - Kontrollerar att VM har namn, status och kostnad.
 - Identifierar negativa kostnader.
 - Förbättrar datakvalitet och tillförlitlighet.
+
+## Version 2.3
+
+### Nytt
+- Programmet registrerar valideringsfel.
+- Valideringsfel exporteras till summary.json.
+- Identifierar negativa kostnader i resursdatan.
+- Förbereder visning av datakvalitet i en framtida dashboard.
