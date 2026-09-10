@@ -112,3 +112,17 @@ summary = {
 
 with open("summary.json", "w") as file:
     json.dump(summary, file, indent=4)
+
+for vm in resources:
+
+    if "name" not in vm:
+        print("Fel: En VM saknar namn")
+
+    if "status" not in vm:
+        print("Fel: En VM saknar status")
+
+    if "cost" not in vm:
+        print("Fel: En VM saknar kostnad")
+
+    elif vm["cost"] < 0:
+        print("Fel: Negativ kostnad upptäckt:", vm["name"])
