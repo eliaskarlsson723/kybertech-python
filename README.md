@@ -104,3 +104,12 @@ Kommande utveckling
 - Programmet beräknar potentiell kostnadsbesparing.
 - Kostnaden för stoppade VM:ar redovisas som möjlig besparing.
 - Exporteras till summary.json.
+
+
+## Version 2.0
+
+### Nytt
+- Programmet genererar rekommendationer baserat på analysresultatet.
+- Rekommendationerna visas i terminalen.
+- Rekommendationerna exporteras till summary.json.
+- Förbereder beslutsstöd i framtida dashboard.
