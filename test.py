@@ -13,6 +13,8 @@ total_cost = 0
 running_cost = 0
 stopped_cost = 0
 
+environment_score = 100
+
 for vm in resources:
     if vm["status"] == "Running":
         running += 1
@@ -33,9 +35,11 @@ average_cost = total_cost / len(resources)
 print("Genomsnittlig kostnad per VM:", average_cost, "kr")
 
 if stopped > 0:
+    environment_score -= 20
     health_status = "Warning"
 else:
     health_status = "Healthy"
+
 
 most_expensive = resources[0]
 
@@ -55,7 +59,11 @@ for vm in resources:
         high_cost_vms.append(vm["name"])
         print("-", vm["name"], "-", vm["cost"], "kr")
 
+environment_score -= len(high_cost_vms) * 10
+
 print("Miljöstatus:", health_status)
+
+print("Environment Score:", environment_score)
 
 summary = {
     "running_vms": running,
@@ -66,7 +74,8 @@ summary = {
     "average_cost": average_cost,
     "most_expensive_vm": most_expensive["name"],
     "high_cost_vms": high_cost_vms,
-    "health_status": health_status
+    "health_status": health_status,
+    "environment_score": environment_score
 }
 
 with open("summary.json", "w") as file:
