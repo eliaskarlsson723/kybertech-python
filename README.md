@@ -121,3 +121,11 @@ Kommande utveckling
 - Programmet identifierar vilka VM:ar som är stoppade.
 - Exporterar stopped_vm_list till summary.json.
 - Ger bättre underlag för felsökning och kostnadsoptimering.
+
+## Version 2.2
+
+### Nytt
+- Programmet validerar inläst data.
+- Kontrollerar att VM har namn, status och kostnad.
+- Identifierar negativa kostnader.
+- Förbättrar datakvalitet och tillförlitlighet.
