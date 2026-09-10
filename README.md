@@ -113,3 +113,11 @@ Kommande utveckling
 - Rekommendationerna visas i terminalen.
 - Rekommendationerna exporteras till summary.json.
 - Förbereder beslutsstöd i framtida dashboard.
+
+
+## Version 2.1
+
+### Nytt
+- Programmet identifierar vilka VM:ar som är stoppade.
+- Exporterar stopped_vm_list till summary.json.
+- Ger bättre underlag för felsökning och kostnadsoptimering.
