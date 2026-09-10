@@ -11,5 +11,6 @@
         "VM-03"
     ],
     "health_status": "Warning",
-    "environment_score": 60
+    "environment_score": 60,
+    "potential_savings": 1500
 }

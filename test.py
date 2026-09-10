@@ -65,6 +65,10 @@ print("Miljöstatus:", health_status)
 
 print("Environment Score:", environment_score)
 
+potential_savings = stopped_cost
+
+print("Potentiell besparing:", potential_savings, "kr")
+
 summary = {
     "running_vms": running,
     "stopped_vms": stopped,
@@ -75,7 +79,8 @@ summary = {
     "most_expensive_vm": most_expensive["name"],
     "high_cost_vms": high_cost_vms,
     "health_status": health_status,
-    "environment_score": environment_score
+    "environment_score": environment_score,
+    "potential_savings": potential_savings
 }
 
 with open("summary.json", "w") as file:
