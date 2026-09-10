@@ -1,6 +1,10 @@
 {
     "running_vms": 3,
     "stopped_vms": 2,
+    "stopped_vm_list": [
+        "VM-02",
+        "VM-05"
+    ],
     "running_cost": 3600,
     "stopped_cost": 1500,
     "total_cost": 5100,

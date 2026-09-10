@@ -15,6 +15,8 @@ stopped_cost = 0
 
 environment_score = 100
 
+stopped_vm_list = []
+
 for vm in resources:
     if vm["status"] == "Running":
         running += 1
@@ -22,6 +24,7 @@ for vm in resources:
     if vm ["status"] == "Stopped":
         stopped += 1
         stopped_cost += vm["cost"]
+        stopped_vm_list.append(vm["name"])
     total_cost += vm["cost"]
 
 print("Antal VM som är igång:", running)
@@ -86,10 +89,15 @@ if len(high_cost_vms) > 0:
 for recommendation in recommendations:
     print("-", recommendation)
 
+print("Stopped VM List:")
+for vm_name in stopped_vm_list:
+    print("-", vm_name)
+
 
 summary = {
     "running_vms": running,
     "stopped_vms": stopped,
+    "stopped_vm_list": stopped_vm_list,
     "running_cost": running_cost,
     "stopped_cost": stopped_cost,
     "total_cost": total_cost,
