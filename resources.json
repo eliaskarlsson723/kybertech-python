@@ -4,4 +4,5 @@
     {"name": "VM-03", "status": "Running", "cost": 1500},
     {"name": "VM-04", "status": "Running", "cost": 900},
     {"name": "VM-05", "status": "Stopped", "cost": 700}
+
 ]

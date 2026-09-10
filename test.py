@@ -3,6 +3,9 @@ import json
 with open("resources.json", "r") as file:
     resources = json.load(file)
 
+
+validation_errors = []
+
 for vm in resources:
     print(vm["name"], "-", vm["status"], "-", vm["cost"], "kr")
 
@@ -93,26 +96,6 @@ print("Stopped VM List:")
 for vm_name in stopped_vm_list:
     print("-", vm_name)
 
-
-summary = {
-    "running_vms": running,
-    "stopped_vms": stopped,
-    "stopped_vm_list": stopped_vm_list,
-    "running_cost": running_cost,
-    "stopped_cost": stopped_cost,
-    "total_cost": total_cost,
-    "average_cost": average_cost,
-    "most_expensive_vm": most_expensive["name"],
-    "high_cost_vms": high_cost_vms,
-    "health_status": health_status,
-    "environment_score": environment_score,
-    "potential_savings": potential_savings,
-    "recommendations": recommendations
-}
-
-with open("summary.json", "w") as file:
-    json.dump(summary, file, indent=4)
-
 for vm in resources:
 
     if "name" not in vm:
@@ -126,3 +109,29 @@ for vm in resources:
 
     elif vm["cost"] < 0:
         print("Fel: Negativ kostnad upptäckt:", vm["name"])
+
+        validation_errors.append(
+            f"negative cost detected for VM: {vm['name']}"
+        )
+
+        print("Validation errors:", validation_errors)
+
+    summary = {
+    "running_vms": running,
+    "stopped_vms": stopped,
+    "stopped_vm_list": stopped_vm_list,
+    "running_cost": running_cost,
+    "stopped_cost": stopped_cost,
+    "total_cost": total_cost,
+    "average_cost": average_cost,
+    "most_expensive_vm": most_expensive["name"],
+    "high_cost_vms": high_cost_vms,
+    "health_status": health_status,
+    "environment_score": environment_score,
+    "potential_savings": potential_savings,
+    "recommendations": recommendations,
+    "validation_errors": validation_errors
+}
+
+with open("summary.json", "w") as file:
+    json.dump(summary, file, indent=4)

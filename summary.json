@@ -20,5 +20,6 @@
     "recommendations": [
         "Review 2 stopped VMs",
         "Investigate 2 high-cost VMs"
-    ]
+    ],
+    "validation_errors": []
 }
