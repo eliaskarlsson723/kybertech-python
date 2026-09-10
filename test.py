@@ -69,6 +69,24 @@ potential_savings = stopped_cost
 
 print("Potentiell besparing:", potential_savings, "kr")
 
+recommendations = []
+
+if stopped > 0:
+    recommendations.append(
+        f"Review {stopped} stopped VMs"
+    )
+
+if len(high_cost_vms) > 0:
+    recommendations.append(
+        f"Investigate {len(high_cost_vms)} high-cost VMs"
+    )
+
+    print("Recommendations:")
+
+for recommendation in recommendations:
+    print("-", recommendation)
+
+
 summary = {
     "running_vms": running,
     "stopped_vms": stopped,
@@ -80,7 +98,8 @@ summary = {
     "high_cost_vms": high_cost_vms,
     "health_status": health_status,
     "environment_score": environment_score,
-    "potential_savings": potential_savings
+    "potential_savings": potential_savings,
+    "recommendations": recommendations
 }
 
 with open("summary.json", "w") as file:

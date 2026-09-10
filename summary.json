@@ -12,5 +12,9 @@
     ],
     "health_status": "Warning",
     "environment_score": 60,
-    "potential_savings": 1500
+    "potential_savings": 1500,
+    "recommendations": [
+        "Review 2 stopped VMs",
+        "Investigate 2 high-cost VMs"
+    ]
 }
