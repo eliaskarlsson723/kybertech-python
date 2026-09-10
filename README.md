@@ -96,3 +96,11 @@ Kommande utveckling
 - Programmet beräknar ett Environment Score mellan 0 och 100.
 - Poängen påverkas av stoppade VM:ar och högkostnadsresurser.
 - Resultatet visas i terminalen och exporteras till summary.json.
+
+
+## Version 1.9
+
+### Nytt
+- Programmet beräknar potentiell kostnadsbesparing.
+- Kostnaden för stoppade VM:ar redovisas som möjlig besparing.
+- Exporteras till summary.json.
