@@ -79,6 +79,7 @@ Kommande utveckling
 - Status exporteras till summary.json.
 
 
+
 ## Version 1.7
 
 ### Nytt
@@ -86,3 +87,12 @@ Kommande utveckling
 - Beräknar kostnad för Stopped VM.
 - Exporterar kostnadsfördelningen till summary.json.
 - Ger bättre underlag för kostnadsanalys och optimering.
+
+
+
+## Version 1.8
+
+### Nytt
+- Programmet beräknar ett Environment Score mellan 0 och 100.
+- Poängen påverkas av stoppade VM:ar och högkostnadsresurser.
+- Resultatet visas i terminalen och exporteras till summary.json.
