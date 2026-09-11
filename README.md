@@ -180,3 +180,12 @@ Kommande utveckling
 - Azure VM-data omvandlas till projektets interna resursmodell.
 - Skapar en resources-lista från azure_vms.json.
 - Förbereder integration med den befintliga analysmotorn.
+
+
+
+## Version 3.5
+
+### Nytt
+- Analysmotorn använder Azure-data som datakälla.
+- summary.json skapas från Azure VM-data.
+- Första analysen körs på riktiga Azure-resurser.
