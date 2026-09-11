@@ -1,0 +1,203 @@
+[
+    {
+        "additionalCapabilities": {
+            "hibernationEnabled": false
+        },
+        "diagnosticsProfile": {
+            "bootDiagnostics": {
+                "enabled": true
+            }
+        },
+        "etag": "\"31\"",
+        "hardwareProfile": {
+            "vmSize": "Standard_B2als_v2"
+        },
+        "id": "/subscriptions/547eea09-d49c-4522-b7a0-242c05082009/resourceGroups/KyberTech-Resources/providers/Microsoft.Compute/virtualMachines/KYB-SRV01",
+        "identity": {
+            "principalId": "8b61ba78-5a11-47ee-84ba-3ffaa40b02b6",
+            "tenantId": "936910bf-e39e-4519-bf2d-b5f7746de9f9",
+            "type": "SystemAssigned"
+        },
+        "location": "swedencentral",
+        "name": "KYB-SRV01",
+        "networkProfile": {
+            "networkInterfaces": [
+                {
+                    "deleteOption": "Detach",
+                    "id": "/subscriptions/547eea09-d49c-4522-b7a0-242c05082009/resourceGroups/KyberTech-Resources/providers/Microsoft.Network/networkInterfaces/kyb-srv01919",
+                    "resourceGroup": "KyberTech-Resources"
+                }
+            ]
+        },
+        "osProfile": {
+            "adminUsername": "kyblocaladmin",
+            "allowExtensionOperations": true,
+            "computerName": "KYB-SRV01",
+            "requireGuestProvisionSignal": true,
+            "secrets": [],
+            "windowsConfiguration": {
+                "enableAutomaticUpdates": true,
+                "enableVMAgentPlatformUpdates": true,
+                "patchSettings": {
+                    "assessmentMode": "ImageDefault",
+                    "automaticByPlatformSettings": {
+                        "rebootSetting": "IfRequired"
+                    },
+                    "enableHotpatching": true,
+                    "patchMode": "AutomaticByPlatform"
+                },
+                "provisionVMAgent": true
+            }
+        },
+        "provisioningState": "Succeeded",
+        "resourceGroup": "KyberTech-Resources",
+        "resources": [
+            {
+                "id": "/subscriptions/547eea09-d49c-4522-b7a0-242c05082009/resourceGroups/KyberTech-Resources/providers/Microsoft.Compute/virtualMachines/KYB-SRV01/extensions/AADLoginForWindows",
+                "resourceGroup": "KyberTech-Resources"
+            },
+            {
+                "id": "/subscriptions/547eea09-d49c-4522-b7a0-242c05082009/resourceGroups/KyberTech-Resources/providers/Microsoft.Compute/virtualMachines/KYB-SRV01/extensions/AzureMonitorWindowsAgent",
+                "resourceGroup": "KyberTech-Resources"
+            }
+        ],
+        "securityProfile": {
+            "securityType": "TrustedLaunch",
+            "uefiSettings": {
+                "secureBootEnabled": true,
+                "vTpmEnabled": true
+            }
+        },
+        "storageProfile": {
+            "dataDisks": [],
+            "diskControllerType": "SCSI",
+            "imageReference": {
+                "exactVersion": "26100.33222.260810",
+                "offer": "WindowsServer",
+                "publisher": "MicrosoftWindowsServer",
+                "sku": "2025-datacenter-azure-edition",
+                "version": "latest"
+            },
+            "osDisk": {
+                "caching": "ReadWrite",
+                "createOption": "FromImage",
+                "deleteOption": "Delete",
+                "managedDisk": {
+                    "id": "/subscriptions/547eea09-d49c-4522-b7a0-242c05082009/resourceGroups/KYBERTECH-RESOURCES/providers/Microsoft.Compute/disks/KYB-SRV01_OsDisk_1_6f5705357e1f47e38f87db1851fd3a12",
+                    "resourceGroup": "KYBERTECH-RESOURCES"
+                },
+                "name": "KYB-SRV01_OsDisk_1_6f5705357e1f47e38f87db1851fd3a12",
+                "osType": "Windows"
+            }
+        },
+        "tags": {
+            "DeviceType": "Server",
+            "Environment": "School",
+            "ManagedBy": "KyberTech",
+            "OperatingSystem": "Windows Server 2025 Datacenter Azure Edition",
+            "Project": "KyberTech"
+        },
+        "timeCreated": "2026-09-02T10:54:26.2811261+00:00",
+        "type": "Microsoft.Compute/virtualMachines",
+        "vmId": "2253715c-eedd-47a0-8c5f-6200774f08fc"
+    },
+    {
+        "additionalCapabilities": {
+            "hibernationEnabled": false
+        },
+        "diagnosticsProfile": {
+            "bootDiagnostics": {
+                "enabled": true
+            }
+        },
+        "etag": "\"28\"",
+        "hardwareProfile": {
+            "vmSize": "Standard_B2als_v2"
+        },
+        "id": "/subscriptions/547eea09-d49c-4522-b7a0-242c05082009/resourceGroups/KyberTech-Resources/providers/Microsoft.Compute/virtualMachines/KYB-WIN11-01",
+        "identity": {
+            "principalId": "b84b9cec-6c16-4994-ae98-359c10c904f6",
+            "tenantId": "936910bf-e39e-4519-bf2d-b5f7746de9f9",
+            "type": "SystemAssigned"
+        },
+        "licenseType": "Windows_Client",
+        "location": "swedencentral",
+        "name": "KYB-WIN11-01",
+        "networkProfile": {
+            "networkInterfaces": [
+                {
+                    "deleteOption": "Detach",
+                    "id": "/subscriptions/547eea09-d49c-4522-b7a0-242c05082009/resourceGroups/KyberTech-Resources/providers/Microsoft.Network/networkInterfaces/kyb-win11-01367",
+                    "resourceGroup": "KyberTech-Resources"
+                }
+            ]
+        },
+        "osProfile": {
+            "adminUsername": "kybwinadmin",
+            "allowExtensionOperations": true,
+            "computerName": "KYB-WIN11-01",
+            "requireGuestProvisionSignal": true,
+            "secrets": [],
+            "windowsConfiguration": {
+                "enableAutomaticUpdates": true,
+                "enableVMAgentPlatformUpdates": true,
+                "patchSettings": {
+                    "assessmentMode": "ImageDefault",
+                    "enableHotpatching": false,
+                    "patchMode": "AutomaticByOS"
+                },
+                "provisionVMAgent": true
+            }
+        },
+        "provisioningState": "Succeeded",
+        "resourceGroup": "KyberTech-Resources",
+        "resources": [
+            {
+                "id": "/subscriptions/547eea09-d49c-4522-b7a0-242c05082009/resourceGroups/KyberTech-Resources/providers/Microsoft.Compute/virtualMachines/KYB-WIN11-01/extensions/AADLoginForWindows",
+                "resourceGroup": "KyberTech-Resources"
+            },
+            {
+                "id": "/subscriptions/547eea09-d49c-4522-b7a0-242c05082009/resourceGroups/KyberTech-Resources/providers/Microsoft.Compute/virtualMachines/KYB-WIN11-01/extensions/AzureMonitorWindowsAgent",
+                "resourceGroup": "KyberTech-Resources"
+            }
+        ],
+        "securityProfile": {
+            "securityType": "TrustedLaunch",
+            "uefiSettings": {
+                "secureBootEnabled": true,
+                "vTpmEnabled": true
+            }
+        },
+        "storageProfile": {
+            "dataDisks": [],
+            "diskControllerType": "SCSI",
+            "imageReference": {
+                "exactVersion": "26200.9168.260809",
+                "offer": "windows-11",
+                "publisher": "microsoftwindowsdesktop",
+                "sku": "win11-25h2-ent",
+                "version": "latest"
+            },
+            "osDisk": {
+                "caching": "ReadWrite",
+                "createOption": "FromImage",
+                "deleteOption": "Delete",
+                "managedDisk": {
+                    "id": "/subscriptions/547eea09-d49c-4522-b7a0-242c05082009/resourceGroups/KYBERTECH-RESOURCES/providers/Microsoft.Compute/disks/KYB-WIN11-01_OsDisk_1_f88c17370b0947c9955ad589e827798d",
+                    "resourceGroup": "KYBERTECH-RESOURCES"
+                },
+                "name": "KYB-WIN11-01_OsDisk_1_f88c17370b0947c9955ad589e827798d",
+                "osType": "Windows"
+            }
+        },
+        "tags": {
+            "DeviceType": "Client",
+            "Environment": "School",
+            "OperatingSystem": "Windows 11",
+            "Project": "KyberTech"
+        },
+        "timeCreated": "2026-09-02T11:51:18.7568598+00:00",
+        "type": "Microsoft.Compute/virtualMachines",
+        "vmId": "8d5cd345-30ce-4217-9f2b-e42131eee346"
+    }
+]
