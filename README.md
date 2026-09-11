@@ -172,3 +172,11 @@ Kommande utveckling
 - Python exporterar VM-information från Azure till azure_vms.json.
 - Azure-data lagras lokalt i JSON-format.
 - Förbereder integration mellan Azure-data och analysmotorn.
+
+
+## Version 3.4
+
+### Nytt
+- Azure VM-data omvandlas till projektets interna resursmodell.
+- Skapar en resources-lista från azure_vms.json.
+- Förbereder integration med den befintliga analysmotorn.
