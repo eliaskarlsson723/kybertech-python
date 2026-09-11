@@ -137,3 +137,13 @@ Kommande utveckling
 - Valideringsfel exporteras till summary.json.
 - Identifierar negativa kostnader i resursdatan.
 - Förbereder visning av datakvalitet i en framtida dashboard.
+
+
+
+## Version 3.0 (Påbörjad)
+
+### Nytt
+- Azure SDK installerad.
+- Azure-autentisering verifierad.
+- Python kan hämta Azure-token.
+- Förbereder hämtning av Azure-resurser.
