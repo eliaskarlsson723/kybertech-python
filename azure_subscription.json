@@ -1,0 +1,16 @@
+{
+    "environmentName": "AzureCloud",
+    "homeTenantId": "936910bf-e39e-4519-bf2d-b5f7746de9f9",
+    "id": "547eea09-d49c-4522-b7a0-242c05082009",
+    "isDefault": true,
+    "managedByTenants": [],
+    "name": "r02_mvt25-001",
+    "state": "Enabled",
+    "tenantDefaultDomain": "fuedu.onmicrosoft.com",
+    "tenantDisplayName": "Folkuniversitetet (fuedu)",
+    "tenantId": "936910bf-e39e-4519-bf2d-b5f7746de9f9",
+    "user": {
+        "name": "mvt25elika@fuedu.onmicrosoft.com",
+        "type": "user"
+    }
+}
