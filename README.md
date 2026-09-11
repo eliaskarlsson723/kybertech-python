@@ -140,10 +140,19 @@ Kommande utveckling
 
 
 
-## Version 3.0 (Påbörjad)
+## Version 3.0
 
 ### Nytt
 - Azure SDK installerad.
 - Azure-autentisering verifierad.
 - Python kan hämta Azure-token.
 - Förbereder hämtning av Azure-resurser.
+
+
+## Version 3.1
+
+### Nytt
+- Python hämtar VM-information från Azure via Azure CLI.
+- Verifierad åtkomst till riktiga Azure-resurser.
+- Kan läsa VM-namn, resursgrupp och region.
+- Förbereder integration med analysmotorn.
