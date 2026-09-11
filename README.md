@@ -189,3 +189,12 @@ Kommande utveckling
 - Analysmotorn använder Azure-data som datakälla.
 - summary.json skapas från Azure VM-data.
 - Första analysen körs på riktiga Azure-resurser.
+
+
+## Version 3.6
+
+### Nytt
+- Python hämtar VM-status från Azure.
+- Identifierar Running och Stopped VM.
+- Konverterar Azure-status till projektets interna datamodell.
+- Förbereder integration med analysmotorn.
