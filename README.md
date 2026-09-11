@@ -164,3 +164,11 @@ Kommande utveckling
 - Python hämtar Azure-prenumerationsinformation.
 - Resultatet exporteras till azure_subscription.json.
 - Förbereder vidare integration med Azure-resurser och SharePoint.
+
+
+## Version 3.3
+
+### Nytt
+- Python exporterar VM-information från Azure till azure_vms.json.
+- Azure-data lagras lokalt i JSON-format.
+- Förbereder integration mellan Azure-data och analysmotorn.
