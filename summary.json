@@ -1,25 +1,3 @@
 {
-    "running_vms": 3,
-    "stopped_vms": 2,
-    "stopped_vm_list": [
-        "VM-02",
-        "VM-05"
-    ],
-    "running_cost": 3600,
-    "stopped_cost": 1500,
-    "total_cost": 5100,
-    "average_cost": 1020.0,
-    "most_expensive_vm": "VM-03",
-    "high_cost_vms": [
-        "VM-01",
-        "VM-03"
-    ],
-    "health_status": "Warning",
-    "environment_score": 60,
-    "potential_savings": 1500,
-    "recommendations": [
-        "Review 2 stopped VMs",
-        "Investigate 2 high-cost VMs"
-    ],
-    "validation_errors": []
+    "total_vms": 2
 }
