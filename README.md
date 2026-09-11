@@ -156,3 +156,11 @@ Kommande utveckling
 - Verifierad åtkomst till riktiga Azure-resurser.
 - Kan läsa VM-namn, resursgrupp och region.
 - Förbereder integration med analysmotorn.
+
+
+## Version 3.2
+
+### Nytt
+- Python hämtar Azure-prenumerationsinformation.
+- Resultatet exporteras till azure_subscription.json.
+- Förbereder vidare integration med Azure-resurser och SharePoint.
