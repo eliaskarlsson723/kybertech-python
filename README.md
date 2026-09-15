@@ -233,3 +233,12 @@ Kommande utveckling
 - Identifierar vilka Azure VM:ar som är stoppade.
 - Exporterar stopped_vm_list till summary.json.
 - Förbättrar beslutsunderlaget i dashboarden.
+
+
+## Version 4.1
+
+### Nytt
+- Hämtar VM-region från Azure.
+- Hämtar DeviceType från Azure-taggar.
+- Utökar projektets interna resursmodell.
+- Förbereder publicering till dashboard och SharePoint.
