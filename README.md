@@ -198,3 +198,13 @@ Kommande utveckling
 - Identifierar Running och Stopped VM.
 - Konverterar Azure-status till projektets interna datamodell.
 - Förbereder integration med analysmotorn.
+
+
+## Version 3.7
+
+### Nytt
+- Python hämtar VM-status från Azure via Azure CLI.
+- Azure-status konverteras till projektets interna resursmodell.
+- Analysmotorn använder nu verklig Azure-data istället för testdata.
+- summary.json skapas baserat på Azure VM-status.
+- Beräknar antal Running och Stopped VM direkt från Azure.
