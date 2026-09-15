@@ -3,5 +3,9 @@
     "running_vms": 0,
     "stopped_vms": 2,
     "health_status": "Warning",
-    "environment_score": 80
+    "environment_score": 80,
+    "stopped_vm_list": [
+        "KYB-SRV01",
+        "KYB-WIN11-01"
+    ]
 }

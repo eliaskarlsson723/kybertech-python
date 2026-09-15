@@ -43,6 +43,8 @@ for vm in vms:
 running = 0
 stopped = 0
 
+stopped_vm_list = []
+
 for vm in resources:
 
     if vm["status"] == "Running":
@@ -50,6 +52,7 @@ for vm in resources:
 
     if vm["status"] == "Stopped":
         stopped += 1
+        stopped_vm_list.append(vm["name"])
 
 if stopped > 0:
     health_status = "Warning"
@@ -66,7 +69,8 @@ summary = {
     "running_vms": running,
     "stopped_vms": stopped,
     "health_status": health_status,
-    "environment_score": environment_score
+    "environment_score": environment_score,
+    "stopped_vm_list": stopped_vm_list
 }
 
 with open("summary.json", "w") as file:
