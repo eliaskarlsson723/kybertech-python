@@ -32,10 +32,20 @@ for vm in vms:
     elif vm["powerState"] == "VM deallocated":
         status = "Stopped"
 
+    device_type = "Unknown"
+
+    if "tags" in vm:
+        device_type = vm["tags"].get(
+            "DeviceType",
+            "Unknown"
+        )
+
     resources.append(
         {
             "name": vm["name"],
             "status": status,
+            "location": vm["location"],
+            "device_type": device_type,
             "cost": 0
         }
     )
