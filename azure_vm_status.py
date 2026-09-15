@@ -56,11 +56,17 @@ if stopped > 0:
 else:
     health_status = "Healthy"
 
+environment_score = 100
+
+if stopped > 0:
+    environment_score -= 20
+
 summary = {
     "total_vms": len(resources),
     "running_vms": running,
     "stopped_vms": stopped,
-    "health_status": health_status
+    "health_status": health_status,
+    "environment_score": environment_score
 }
 
 with open("summary.json", "w") as file:
