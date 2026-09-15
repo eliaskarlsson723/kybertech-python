@@ -225,3 +225,11 @@ Kommande utveckling
 - Environment Score beräknas från Azure-data.
 - Miljön får ett poängvärde mellan 0 och 100.
 - Resultatet exporteras till summary.json.
+
+
+## Version 4.0
+
+### Nytt
+- Identifierar vilka Azure VM:ar som är stoppade.
+- Exporterar stopped_vm_list till summary.json.
+- Förbättrar beslutsunderlaget i dashboarden.
