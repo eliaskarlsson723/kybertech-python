@@ -217,3 +217,11 @@ Kommande utveckling
 - Miljön markeras som Healthy eller Warning.
 - Resultatet exporteras till summary.json.
 - Använder verklig Azure-data som underlag.
+
+
+## Version 3.9
+
+### Nytt
+- Environment Score beräknas från Azure-data.
+- Miljön får ett poängvärde mellan 0 och 100.
+- Resultatet exporteras till summary.json.
