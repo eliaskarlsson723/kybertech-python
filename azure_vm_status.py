@@ -18,7 +18,6 @@ result = subprocess.run(
     text=True
 )
 
-
 vms = json.loads(result.stdout)
 
 resources = []
@@ -41,8 +40,6 @@ for vm in vms:
         }
     )
 
-print(resources)
-
 running = 0
 stopped = 0
 
@@ -54,10 +51,16 @@ for vm in resources:
     if vm["status"] == "Stopped":
         stopped += 1
 
+if stopped > 0:
+    health_status = "Warning"
+else:
+    health_status = "Healthy"
+
 summary = {
     "total_vms": len(resources),
     "running_vms": running,
-    "stopped_vms": stopped
+    "stopped_vms": stopped,
+    "health_status": health_status
 }
 
 with open("summary.json", "w") as file:
