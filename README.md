@@ -208,3 +208,12 @@ Kommande utveckling
 - Analysmotorn använder nu verklig Azure-data istället för testdata.
 - summary.json skapas baserat på Azure VM-status.
 - Beräknar antal Running och Stopped VM direkt från Azure.
+
+
+## Version 3.8
+
+### Nytt
+- Health Status beräknas från Azure VM-status.
+- Miljön markeras som Healthy eller Warning.
+- Resultatet exporteras till summary.json.
+- Använder verklig Azure-data som underlag.
