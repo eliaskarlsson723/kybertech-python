@@ -116,6 +116,13 @@ environment_status = {
     "last_updated": last_updated
 }
 
+environment_summary = (
+    f"Health Status: {health_status} | "
+    f"Environment Score: {environment_score} | "
+    f"Running VMs: {running} | "
+    f"Stopped VMs: {stopped}"
+)
+
 summary = {
     "environment_status": environment_status,
     "total_vms": len(resources),
@@ -126,7 +133,8 @@ summary = {
     "stopped_vm_list": stopped_vm_list,
     "vm_details": vm_details,
     "recommendations": recommendations,
-    "critical_resources": critical_resources
+    "critical_resources": critical_resources,
+    "environment_summary": environment_summary
 }
 
 with open("summary.json", "w") as file:

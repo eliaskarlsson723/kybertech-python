@@ -4,7 +4,7 @@
         "environment_score": 100,
         "running_vms": 2,
         "stopped_vms": 0,
-        "last_updated": "2026-09-16 21:56"
+        "last_updated": "2026-09-16 22:00"
     },
     "total_vms": 2,
     "running_vms": 2,
@@ -27,5 +27,6 @@
         }
     ],
     "recommendations": [],
-    "critical_resources": []
+    "critical_resources": [],
+    "environment_summary": "Health Status: Healthy | Environment Score: 100 | Running VMs: 2 | Stopped VMs: 0"
 }
