@@ -133,17 +133,28 @@ environment_summary = (
     f"Stopped VMs: {stopped}"
 )
 
-summary = {
-    "environment_status": environment_status,
-    "total_vms": len(resources),
-    "running_vms": running,
-    "stopped_vms": stopped,
+dashboard = {
     "health_status": health_status,
     "environment_score": environment_score,
-    "stopped_vm_list": stopped_vm_list,
-    "vm_details": vm_details,
+    "alert_level": alert_level,
+    "last_updated": last_updated,
+    "running_vms": running,
+    "stopped_vms": stopped
+}
+
+actions = {
     "recommendations": recommendations,
-    "critical_resources": critical_resources,
+    "critical_resources": critical_resources
+}
+
+inventory = {
+    "vm_details": vm_details
+}
+
+summary = {
+    "dashboard": dashboard,
+    "actions": actions,
+    "inventory": inventory,
     "environment_summary": environment_summary
 }
 
