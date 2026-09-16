@@ -86,6 +86,13 @@ for vm in resources:
         }
     )
 
+recommendations = []
+
+if stopped > 0:
+    recommendations.append(
+        f"Review {stopped} stopped VMs"
+    )
+
 summary = {
     "total_vms": len(resources),
     "running_vms": running,
@@ -93,7 +100,8 @@ summary = {
     "health_status": health_status,
     "environment_score": environment_score,
     "stopped_vm_list": stopped_vm_list,
-    "vm_details": vm_details
+    "vm_details": vm_details,
+    "recommendations": recommendations
 }
 
 with open("summary.json", "w") as file:

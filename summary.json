@@ -1,25 +1,23 @@
 {
     "total_vms": 2,
-    "running_vms": 0,
-    "stopped_vms": 2,
-    "health_status": "Warning",
-    "environment_score": 80,
-    "stopped_vm_list": [
-        "KYB-SRV01",
-        "KYB-WIN11-01"
-    ],
+    "running_vms": 2,
+    "stopped_vms": 0,
+    "health_status": "Healthy",
+    "environment_score": 100,
+    "stopped_vm_list": [],
     "vm_details": [
         {
             "name": "KYB-SRV01",
-            "status": "Stopped",
+            "status": "Running",
             "location": "swedencentral",
             "device_type": "Server"
         },
         {
             "name": "KYB-WIN11-01",
-            "status": "Stopped",
+            "status": "Running",
             "location": "swedencentral",
             "device_type": "Client"
         }
-    ]
+    ],
+    "recommendations": []
 }
