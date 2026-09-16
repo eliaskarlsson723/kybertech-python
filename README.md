@@ -315,3 +315,12 @@ Kommande utveckling
 - Klassificerar miljön som Green, Yellow eller Red.
 - Baseras på Azure VM-status.
 - Förbereder visualisering i SharePoint-dashboard.
+
+
+## Version 5.0
+
+### Nytt
+- Omstrukturerar summary.json till dashboard-, actions- och inventory-sektioner.
+- Skapar tydligare separation mellan analysdata och inventeringsdata.
+- Förbereder framtida SharePoint-dashboard.
+- Förbättrar återanvändning av data i flera dashboard-komponenter.
