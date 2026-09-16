@@ -19,5 +19,6 @@
             "device_type": "Client"
         }
     ],
-    "recommendations": []
+    "recommendations": [],
+    "critical_resources": []
 }

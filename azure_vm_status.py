@@ -86,6 +86,15 @@ for vm in resources:
         }
     )
 
+critical_resources = []
+
+for vm in resources:
+
+    if vm["status"] == "Stopped":
+        critical_resources.append(
+            vm["name"]
+        )
+
 recommendations = []
 
 if stopped > 0:
@@ -101,7 +110,8 @@ summary = {
     "environment_score": environment_score,
     "stopped_vm_list": stopped_vm_list,
     "vm_details": vm_details,
-    "recommendations": recommendations
+    "recommendations": recommendations,
+    "critical_resources": critical_resources
 }
 
 with open("summary.json", "w") as file:
