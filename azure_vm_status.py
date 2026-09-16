@@ -108,12 +108,22 @@ last_updated = datetime.now().strftime(
     "%Y-%m-%d %H:%M"
 )
 
+if stopped == 0:
+    alert_level = "Green"
+
+elif stopped <= 2:
+    alert_level = "Yellow"
+
+else:
+    alert_level = "Red"
+
 environment_status = {
     "health_status": health_status,
     "environment_score": environment_score,
     "running_vms": running,
     "stopped_vms": stopped,
-    "last_updated": last_updated
+    "last_updated": last_updated,
+    "alert_level": alert_level
 }
 
 environment_summary = (
