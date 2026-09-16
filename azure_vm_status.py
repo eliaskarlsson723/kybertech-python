@@ -1,6 +1,8 @@
 import subprocess
 import json
 
+from datetime import datetime
+
 resource_group = "KyberTech-Resources"
 
 result = subprocess.run(
@@ -102,11 +104,16 @@ if stopped > 0:
         f"Review {stopped} stopped VMs"
     )
 
+last_updated = datetime.now().strftime(
+    "%Y-%m-%d %H:%M"
+)
+
 environment_status = {
     "health_status": health_status,
     "environment_score": environment_score,
     "running_vms": running,
-    "stopped_vms": stopped
+    "stopped_vms": stopped,
+    "last_updated": last_updated
 }
 
 summary = {
