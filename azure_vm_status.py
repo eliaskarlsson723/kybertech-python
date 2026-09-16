@@ -102,7 +102,15 @@ if stopped > 0:
         f"Review {stopped} stopped VMs"
     )
 
+environment_status = {
+    "health_status": health_status,
+    "environment_score": environment_score,
+    "running_vms": running,
+    "stopped_vms": stopped
+}
+
 summary = {
+    "environment_status": environment_status,
     "total_vms": len(resources),
     "running_vms": running,
     "stopped_vms": stopped,
