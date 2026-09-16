@@ -306,3 +306,12 @@ Kommande utveckling
 - Sammanfattar miljöstatus i ett läsbart format.
 - Inkluderar Health Status, Environment Score och VM-status.
 - Förbereder publicering i SharePoint-dashboard.
+
+
+## Version 4.9
+
+### Nytt
+- Introducerar alert_level för miljön.
+- Klassificerar miljön som Green, Yellow eller Red.
+- Baseras på Azure VM-status.
+- Förbereder visualisering i SharePoint-dashboard.
