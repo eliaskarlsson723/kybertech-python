@@ -260,3 +260,13 @@ Kommande utveckling
 - Bekräftar att Microsoft 365-identiteten fungerar mot SharePoint.
 - Förbereder framtida integration mellan Python och SharePoint.
 - Test utfört utan att påverka befintliga SharePoint-listor.
+
+
+## Version 4.4
+
+### Nytt
+- Genererar rekommendationer baserat på Azure-data.
+- Identifierar stoppade VM:ar som bör granskas.
+- Exporterar rekommendationer till summary.json.
+- Bygger vidare på Health Status och Environment Score.
+- Förbereder beslutsstöd för framtida SharePoint-dashboard.
