@@ -270,3 +270,12 @@ Kommande utveckling
 - Exporterar rekommendationer till summary.json.
 - Bygger vidare på Health Status och Environment Score.
 - Förbereder beslutsstöd för framtida SharePoint-dashboard.
+
+
+## Version 4.5
+
+### Nytt
+- Identifierar kritiska resurser från Azure-data.
+- Exporterar critical_resources till summary.json.
+- Förbättrar beslutsstödet genom att markera resurser som kräver uppmärksamhet.
+- Förbereder framtida Environment Status-dashboard.
