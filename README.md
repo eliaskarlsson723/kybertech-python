@@ -324,3 +324,13 @@ Kommande utveckling
 - Skapar tydligare separation mellan analysdata och inventeringsdata.
 - Förbereder framtida SharePoint-dashboard.
 - Förbättrar återanvändning av data i flera dashboard-komponenter.
+
+
+## Version 5.1
+
+### Nytt
+- Introducerar sharepoint_payload.json.
+- Exporterar miljöstatus i ett SharePoint-anpassat format.
+- Inkluderar Health Status, Environment Score, Alert Level och VM-status.
+- Lägger till rekommendationer baserade på Azure-data.
+- Förbereder framtida integration med SharePoint-dashboard.
