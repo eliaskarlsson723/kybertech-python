@@ -297,3 +297,12 @@ Kommande utveckling
 - Visar när Azure-analysen senast kördes.
 - Förbättrar spårbarhet och dashboard-stöd.
 - Förbereder framtida SharePoint-integration.
+
+
+## Version 4.8
+
+### Nytt
+- Introducerar environment_summary.
+- Sammanfattar miljöstatus i ett läsbart format.
+- Inkluderar Health Status, Environment Score och VM-status.
+- Förbereder publicering i SharePoint-dashboard.
