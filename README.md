@@ -288,3 +288,12 @@ Kommande utveckling
 - Samlar Health Status, Environment Score och VM-status i en gemensam struktur.
 - Tydligare separation mellan inventeringsdata och analysdata.
 - Förbereder framtida integration med SharePoint-dashboard.
+
+
+## Version 4.7
+
+### Nytt
+- Lägger till last_updated i environment_status.
+- Visar när Azure-analysen senast kördes.
+- Förbättrar spårbarhet och dashboard-stöd.
+- Förbereder framtida SharePoint-integration.
