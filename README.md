@@ -242,3 +242,11 @@ Kommande utveckling
 - Hämtar DeviceType från Azure-taggar.
 - Utökar projektets interna resursmodell.
 - Förbereder publicering till dashboard och SharePoint.
+
+
+## Version 4.2
+
+### Nytt
+- Exporterar detaljerad VM-information till summary.json.
+- Inkluderar namn, status, region och enhetstyp.
+- Förbereder framtida dashboard och SharePoint-integration.
