@@ -250,3 +250,13 @@ Kommande utveckling
 - Exporterar detaljerad VM-information till summary.json.
 - Inkluderar namn, status, region och enhetstyp.
 - Förbereder framtida dashboard och SharePoint-integration.
+
+
+## Version 4.3
+
+### Nytt
+- Verifierat autentisering mot SharePoint från Python.
+- Python kan hämta en giltig SharePoint access token.
+- Bekräftar att Microsoft 365-identiteten fungerar mot SharePoint.
+- Förbereder framtida integration mellan Python och SharePoint.
+- Test utfört utan att påverka befintliga SharePoint-listor.
