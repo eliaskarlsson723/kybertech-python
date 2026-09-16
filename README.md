@@ -334,3 +334,13 @@ Kommande utveckling
 - Inkluderar Health Status, Environment Score, Alert Level och VM-status.
 - Lägger till rekommendationer baserade på Azure-data.
 - Förbereder framtida integration med SharePoint-dashboard.
+
+
+## Version 5.2
+
+### Nytt
+- Verifierar autentisering mot Microsoft Graph från Python.
+- Bekräftar åtkomst till Microsoft 365-tjänster via Azure CLI.
+- Hämtar giltig Microsoft Graph-token.
+- Förbereder framtida integration mellan Python och SharePoint.
+- Verifierar teknisk kommunikationsväg mellan Azure, Python och Microsoft 365.
