@@ -1,0 +1,6 @@
+{
+    "health_status": "Warning",
+    "environment_score": 80,
+    "running_vms": 0,
+    "stopped_vms": 2
+}
