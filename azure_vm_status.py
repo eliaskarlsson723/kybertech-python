@@ -74,13 +74,26 @@ environment_score = 100
 if stopped > 0:
     environment_score -= 20
 
+vm_details = []
+
+for vm in resources:
+    vm_details.append(
+        {
+            "name": vm["name"],
+            "status": vm["status"],
+            "location": vm["location"],
+            "device_type": vm["device_type"]
+        }
+    )
+
 summary = {
     "total_vms": len(resources),
     "running_vms": running,
     "stopped_vms": stopped,
     "health_status": health_status,
     "environment_score": environment_score,
-    "stopped_vm_list": stopped_vm_list
+    "stopped_vm_list": stopped_vm_list,
+    "vm_details": vm_details
 }
 
 with open("summary.json", "w") as file:

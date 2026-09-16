@@ -7,5 +7,19 @@
     "stopped_vm_list": [
         "KYB-SRV01",
         "KYB-WIN11-01"
+    ],
+    "vm_details": [
+        {
+            "name": "KYB-SRV01",
+            "status": "Stopped",
+            "location": "swedencentral",
+            "device_type": "Server"
+        },
+        {
+            "name": "KYB-WIN11-01",
+            "status": "Stopped",
+            "location": "swedencentral",
+            "device_type": "Client"
+        }
     ]
 }
