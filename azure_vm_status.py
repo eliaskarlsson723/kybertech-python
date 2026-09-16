@@ -71,10 +71,9 @@ if stopped > 0:
 else:
     health_status = "Healthy"
 
-environment_score = 100
-
-if stopped > 0:
-    environment_score -= 20
+environment_score = int(
+    (running / len(resources)) * 100
+)
 
 vm_details = []
 
@@ -108,14 +107,14 @@ last_updated = datetime.now().strftime(
     "%Y-%m-%d %H:%M"
 )
 
-if stopped == 0:
+if running == len(resources):
     alert_level = "Green"
 
-elif stopped <= 2:
-    alert_level = "Yellow"
+elif running == 0:
+    alert_level = "Red"
 
 else:
-    alert_level = "Red"
+    alert_level = "Yellow"
 
 environment_status = {
     "health_status": health_status,
@@ -158,8 +157,27 @@ summary = {
     "environment_summary": environment_summary
 }
 
+sharepoint_payload = {
+    "health_status": health_status,
+    "environment_score": environment_score,
+    "alert_level": alert_level,
+    "running_vms": running,
+    "stopped_vms": stopped,
+    "last_updated": last_updated,
+    "recommendations": recommendations
+}
+
 with open("summary.json", "w") as file:
     json.dump(summary, file, indent=4)
+
+
+with open("sharepoint_payload.json", "w") as file:
+    json.dump(
+        sharepoint_payload,
+        file,
+        indent=4
+    )
+
 
 print(resources)
 print(summary)
