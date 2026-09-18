@@ -353,3 +353,13 @@ Kommande utveckling
 - Läser information om SharePoint-sajten från Python.
 - Bekräftar att Graph API fungerar mot SharePoint.
 - Förbereder framtida läsning och skrivning av SharePoint-listor.
+
+
+## Version 5.4
+
+### Nytt
+- Läser SharePoint-webbplats via Microsoft Graph.
+- Hämtar och verifierar Site ID.
+- Bekräftar åtkomst mellan Python och SharePoint.
+- Undersöker SharePoint-listor via Graph API.
+- Förbereder framtida läsning av SharePoint-innehåll.
