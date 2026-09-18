@@ -344,3 +344,12 @@ Kommande utveckling
 - Hämtar giltig Microsoft Graph-token.
 - Förbereder framtida integration mellan Python och SharePoint.
 - Verifierar teknisk kommunikationsväg mellan Azure, Python och Microsoft 365.
+
+
+## Version 5.3
+
+### Nytt
+- Verifierar åtkomst till SharePoint-webbplats via Microsoft Graph.
+- Läser information om SharePoint-sajten från Python.
+- Bekräftar att Graph API fungerar mot SharePoint.
+- Förbereder framtida läsning och skrivning av SharePoint-listor.
