@@ -363,3 +363,13 @@ Kommande utveckling
 - Bekräftar åtkomst mellan Python och SharePoint.
 - Undersöker SharePoint-listor via Graph API.
 - Förbereder framtida läsning av SharePoint-innehåll.
+
+
+## Version 5.5
+
+### Nytt
+- Undersöker SharePoint-listor via Microsoft Graph.
+- Verifierar åtkomst till SharePoint Site via Graph API.
+- Hämtar Site ID från SharePoint-webbplatsen.
+- Bekräftar att Graph-anrop mot SharePoint fungerar.
+- Identifierar att listor inte returneras via nuvarande Graph-behörigheter eller endpoint.
