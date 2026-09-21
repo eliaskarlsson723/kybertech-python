@@ -415,3 +415,13 @@ Kommande utveckling
 - Använder en single-tenant-konfiguration för skolans organisation.
 - Skapar inga client secrets eller breda Graph-behörigheter.
 - Förbereder framtida integration med SharePoint-testlistan.
+
+
+## Version 5.10
+
+### Nytt
+- Konfigurerar Microsoft Graph-behörighet för KyberTech-Python.
+- Använder delegerad läsbehörighet för SharePoint.
+- Följer principen om minsta nödvändiga behörighet.
+- Skapar inga client secrets eller skrivbehörigheter.
+- Förbereder säker läsning av SharePoint-testlistan.
