@@ -373,3 +373,13 @@ Kommande utveckling
 - Hämtar Site ID från SharePoint-webbplatsen.
 - Bekräftar att Graph-anrop mot SharePoint fungerar.
 - Identifierar att listor inte returneras via nuvarande Graph-behörigheter eller endpoint.
+
+
+## Version 5.6
+
+### Nytt
+- Undersöker Microsoft Graph-behörigheter från Python.
+- Läser scopes från aktuell Graph-token.
+- Identifierar att nuvarande token saknar Sites-behörighet.
+- Förklarar varför SharePoint-listor inte kan läsas med nuvarande behörigheter.
+- Förbereder nästa steg med Microsoft Entra ID App Registration.
