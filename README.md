@@ -383,3 +383,14 @@ Kommande utveckling
 - Identifierar att nuvarande token saknar Sites-behörighet.
 - Förklarar varför SharePoint-listor inte kan läsas med nuvarande behörigheter.
 - Förbereder nästa steg med Microsoft Entra ID App Registration.
+
+
+## Version 5.7
+
+### Nytt
+- Refaktoriserar Azure-integrationen till Azure SDK för Python.
+- Tar bort hårdkodad sökväg till Azure CLI.
+- Tar bort beroendet av subprocess för hämtning av VM-data.
+- Hämtar VM-information och aktuell Power State direkt via Azure Compute SDK.
+- Behåller befintlig analyslogik och dashboard-output.
+- Förbättrar programmets portabilitet och struktur.
