@@ -3,7 +3,7 @@
         "health_status": "Healthy",
         "environment_score": 100,
         "alert_level": "Green",
-        "last_updated": "2026-09-21 15:38",
+        "last_updated": "2026-09-21 15:51",
         "running_vms": 2,
         "stopped_vms": 0
     },
