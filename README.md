@@ -404,3 +404,14 @@ Kommande utveckling
 - Gör programmet möjligt att köra direkt från VS Code.
 - Behåller Azure-autentisering utanför källkoden.
 - Förbättrar programmets portabilitet mellan utvecklingsmiljöer.
+
+
+## Version 5.9
+
+### Nytt
+- Registrerar KyberTech-Python i Microsoft Entra ID.
+- Introducerar en separat applikationsidentitet för Python-lösningen.
+- Förbereder säker autentisering mot Microsoft Graph.
+- Använder en single-tenant-konfiguration för skolans organisation.
+- Skapar inga client secrets eller breda Graph-behörigheter.
+- Förbereder framtida integration med SharePoint-testlistan.
