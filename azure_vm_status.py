@@ -6,14 +6,25 @@ from azure.mgmt.compute import ComputeManagementClient
 
 from datetime import datetime
 
+from azure.core.exceptions import (
+    AzureError,
+    ClientAuthenticationError,
+    ResourceNotFoundError,
+    ServiceRequestError
+)
+
 resource_group = "KyberTech-Resources"
 
 subscription_id = os.getenv("AZURE_SUBSCRIPTION_ID")
 
 if not subscription_id:
-    raise RuntimeError(
-        "AZURE_SUBSCRIPTION_ID saknas."
+    print(
+        "Fel: AZURE_SUBSCRIPTION_ID saknas."
     )
+    print(
+        "Kontrollera programmets Azure-konfiguration."
+    )
+    raise SystemExit(1)
 
 credential = AzureCliCredential()
 
@@ -22,20 +33,88 @@ compute_client = ComputeManagementClient(
     subscription_id=subscription_id
 )
 
-vms = compute_client.virtual_machines.list(
-    resource_group
-)
+try:
+    vms = list(
+        compute_client.virtual_machines.list(
+            resource_group
+        )
+    )
+
+except ClientAuthenticationError:
+    print(
+        "Fel: Kunde inte autentisera mot Azure."
+    )
+    print(
+        "Kontrollera att du är inloggad i Azure CLI."
+    )
+    raise SystemExit(1)
+
+except ResourceNotFoundError:
+    print(
+        f"Fel: Resource Group '{resource_group}' kunde inte hittas."
+    )
+    raise SystemExit(1)
+
+except ServiceRequestError:
+    print(
+        "Fel: Kunde inte ansluta till Azure."
+    )
+    print(
+        "Kontrollera nätverksanslutningen."
+    )
+    raise SystemExit(1)
+
+except AzureError as error:
+    print(
+        "Fel: Azure kunde inte hämta VM-information."
+    )
+    print(
+        f"Detaljer: {error}"
+    )
+    raise SystemExit(1)
+
+if not vms:
+    print(
+        f"Inga virtuella maskiner hittades i '{resource_group}'."
+    )
+    raise SystemExit(0)
 
 resources = []
 
 for vm in vms:
 
-    instance_view = compute_client.virtual_machines.instance_view(
-        resource_group,
-        vm.name
-    )
+    try:
+        instance_view = (
+            compute_client.virtual_machines.instance_view(
+                resource_group,
+                vm.name
+            )
+        )
+
+    except AzureError as error:
+        print(
+            f"Varning: Kunde inte läsa status för {vm.name}."
+        )
+        print(
+            f"Detaljer: {error}"
+        )
+
+        instance_view = None
 
     status = "Unknown"
+
+    if instance_view:
+
+        for vm_status in instance_view.statuses:
+
+            if vm_status.code == "PowerState/running":
+                status = "Running"
+
+            elif vm_status.code in (
+                "PowerState/deallocated",
+                "PowerState/stopped"
+            ):
+                status = "Stopped"
 
     for vm_status in instance_view.statuses:
 
