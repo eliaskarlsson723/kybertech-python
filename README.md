@@ -425,3 +425,13 @@ Kommande utveckling
 - Följer principen om minsta nödvändiga behörighet.
 - Skapar inga client secrets eller skrivbehörigheter.
 - Förbereder säker läsning av SharePoint-testlistan.
+
+
+## Version 5.11
+
+### Nytt
+- Implementerar autentisering för KyberTech-Python med MSAL.
+- Använder public client flow utan client secret.
+- Testar delegerad autentisering mot Microsoft Graph.
+- Identifierar krav på administratörsgodkännande för SharePoint-behörighet.
+- Behåller autentiseringsuppgifter utanför källkoden.
