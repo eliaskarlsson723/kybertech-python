@@ -1,52 +1,63 @@
-import subprocess
 import json
+import os
+
+from azure.identity import AzureCliCredential
+from azure.mgmt.compute import ComputeManagementClient
 
 from datetime import datetime
 
 resource_group = "KyberTech-Resources"
 
-result = subprocess.run(
-    [
-        r"C:\Program Files\Microsoft SDKs\Azure\CLI2\wbin\az.cmd",
-        "vm",
-        "list",
-        "-g",
-        resource_group,
-        "-d",
-        "--output",
-        "json"
-    ],
-    capture_output=True,
-    text=True
+subscription_id = os.getenv("AZURE_SUBSCRIPTION_ID")
+
+if not subscription_id:
+    raise RuntimeError(
+        "AZURE_SUBSCRIPTION_ID saknas."
+    )
+
+credential = AzureCliCredential()
+
+compute_client = ComputeManagementClient(
+    credential=credential,
+    subscription_id=subscription_id
 )
 
-vms = json.loads(result.stdout)
+vms = compute_client.virtual_machines.list(
+    resource_group
+)
 
 resources = []
 
 for vm in vms:
 
+    instance_view = compute_client.virtual_machines.instance_view(
+        resource_group,
+        vm.name
+    )
+
     status = "Unknown"
 
-    if vm["powerState"] == "VM running":
-        status = "Running"
+    for vm_status in instance_view.statuses:
 
-    elif vm["powerState"] == "VM deallocated":
-        status = "Stopped"
+        if vm_status.code == "PowerState/running":
+            status = "Running"
+
+        elif vm_status.code == "PowerState/deallocated":
+            status = "Stopped"
 
     device_type = "Unknown"
 
-    if "tags" in vm:
-        device_type = vm["tags"].get(
+    if vm.tags:
+        device_type = vm.tags.get(
             "DeviceType",
             "Unknown"
         )
 
     resources.append(
         {
-            "name": vm["name"],
+            "name": vm.name,
             "status": status,
-            "location": vm["location"],
+            "location": vm.location,
             "device_type": device_type,
             "cost": 0
         }
