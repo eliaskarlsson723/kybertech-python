@@ -394,3 +394,13 @@ Kommande utveckling
 - Hämtar VM-information och aktuell Power State direkt via Azure Compute SDK.
 - Behåller befintlig analyslogik och dashboard-output.
 - Förbättrar programmets portabilitet och struktur.
+
+
+## Version 5.8
+
+### Nytt
+- Förbättrar konfigurationshanteringen för Azure SDK.
+- Flyttar Azure Subscription ID till extern miljökonfiguration.
+- Gör programmet möjligt att köra direkt från VS Code.
+- Behåller Azure-autentisering utanför källkoden.
+- Förbättrar programmets portabilitet mellan utvecklingsmiljöer.
