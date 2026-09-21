@@ -435,3 +435,13 @@ Kommande utveckling
 - Testar delegerad autentisering mot Microsoft Graph.
 - Identifierar krav på administratörsgodkännande för SharePoint-behörighet.
 - Behåller autentiseringsuppgifter utanför källkoden.
+
+
+## Version 5.12
+
+### Nytt
+- Introducerar strukturerad felhantering för Azure SDK.
+- Hanterar saknad Azure-konfiguration.
+- Hanterar autentiserings- och anslutningsfel.
+- Hanterar saknade Azure-resurser på ett kontrollerat sätt.
+- Förbättrar programmets stabilitet och användarvänlighet.
