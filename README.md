@@ -445,3 +445,16 @@ Kommande utveckling
 - Hanterar autentiserings- och anslutningsfel.
 - Hanterar saknade Azure-resurser på ett kontrollerat sätt.
 - Förbättrar programmets stabilitet och användarvänlighet.
+
+
+## Version 5.13
+
+### Nytt
+- Separerar analyslogiken från Azure-integrationen.
+- Introducerar en återanvändbar analysfunktion i analysis.py.
+- Lägger till automatiserade tester med pytest.
+- Testar scenarier där alla VM körs, en VM är stoppad och alla VM är stoppade.
+- Verifierar Environment Score, Health Status, Alert Level och Recommendations.
+- Tar bort duplicerad analyslogik från huvudprogrammet.
+- Lägger till .gitignore för Python- och pytest-cache.
+- Förbättrar programmets struktur, testbarhet och versionshantering.
