@@ -1,3 +1,5 @@
+from analysis import analyze_environment
+
 import json
 import os
 
@@ -116,14 +118,6 @@ for vm in vms:
             ):
                 status = "Stopped"
 
-    for vm_status in instance_view.statuses:
-
-        if vm_status.code == "PowerState/running":
-            status = "Running"
-
-        elif vm_status.code == "PowerState/deallocated":
-            status = "Stopped"
-
     device_type = "Unknown"
 
     if vm.tags:
@@ -142,28 +136,15 @@ for vm in vms:
         }
     )
 
-running = 0
-stopped = 0
+analysis = analyze_environment(resources)
 
-stopped_vm_list = []
+running = analysis["running_vms"]
+stopped = analysis["stopped_vms"]
 
-for vm in resources:
-
-    if vm["status"] == "Running":
-        running += 1
-
-    if vm["status"] == "Stopped":
-        stopped += 1
-        stopped_vm_list.append(vm["name"])
-
-if stopped > 0:
-    health_status = "Warning"
-else:
-    health_status = "Healthy"
-
-environment_score = int(
-    (running / len(resources)) * 100
-)
+environment_score = analysis["environment_score"]
+health_status = analysis["health_status"]
+alert_level = analysis["alert_level"]
+recommendations = analysis["recommendations"]
 
 vm_details = []
 
@@ -186,25 +167,9 @@ for vm in resources:
             vm["name"]
         )
 
-recommendations = []
-
-if stopped > 0:
-    recommendations.append(
-        f"Review {stopped} stopped VMs"
-    )
-
 last_updated = datetime.now().strftime(
     "%Y-%m-%d %H:%M"
 )
-
-if running == len(resources):
-    alert_level = "Green"
-
-elif running == 0:
-    alert_level = "Red"
-
-else:
-    alert_level = "Yellow"
 
 environment_status = {
     "health_status": health_status,

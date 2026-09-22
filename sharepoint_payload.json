@@ -1,11 +1,11 @@
 {
     "health_status": "Warning",
-    "environment_score": 50,
-    "alert_level": "Yellow",
-    "running_vms": 1,
-    "stopped_vms": 1,
-    "last_updated": "2026-09-21 17:55",
+    "environment_score": 0,
+    "alert_level": "Red",
+    "running_vms": 0,
+    "stopped_vms": 2,
+    "last_updated": "2026-09-22 21:41",
     "recommendations": [
-        "Review 1 stopped VMs"
+        "Review 2 stopped VMs"
     ]
 }
