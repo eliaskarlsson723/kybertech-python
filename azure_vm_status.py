@@ -170,15 +170,6 @@ for vm in resources:
 
 last_updated = datetime.now().astimezone().isoformat()
 
-environment_status = {
-    "health_status": health_status,
-    "environment_score": environment_score,
-    "running_vms": running,
-    "stopped_vms": stopped,
-    "last_updated": last_updated,
-    "alert_level": alert_level
-}
-
 environment_summary = (
     f"Health Status: {health_status} | "
     f"Environment Score: {environment_score} | "

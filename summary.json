@@ -1,19 +1,15 @@
 {
     "dashboard": {
-        "health_status": "Warning",
-        "environment_score": 50,
-        "alert_level": "Yellow",
-        "last_updated": "2026-09-25T14:56:06.539776+02:00",
-        "running_vms": 1,
-        "stopped_vms": 1
+        "health_status": "Healthy",
+        "environment_score": 100,
+        "alert_level": "Green",
+        "last_updated": "2026-09-25T15:19:24.004669+02:00",
+        "running_vms": 2,
+        "stopped_vms": 0
     },
     "actions": {
-        "recommendations": [
-            "Review 1 stopped VMs"
-        ],
-        "critical_resources": [
-            "KYB-WIN11-01"
-        ]
+        "recommendations": [],
+        "critical_resources": []
     },
     "inventory": {
         "vm_details": [
@@ -25,11 +21,11 @@
             },
             {
                 "name": "KYB-WIN11-01",
-                "status": "Stopped",
+                "status": "Running",
                 "location": "swedencentral",
                 "device_type": "Client"
             }
         ]
     },
-    "environment_summary": "Health Status: Warning | Environment Score: 50 | Running VMs: 1 | Stopped VMs: 1"
+    "environment_summary": "Health Status: Healthy | Environment Score: 100 | Running VMs: 2 | Stopped VMs: 0"
 }
