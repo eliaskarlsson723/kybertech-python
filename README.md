@@ -471,3 +471,17 @@ Kommande utveckling
 - Verifierar att numeriska analysvärden kan skickas som Number-värden.
 - Verifierar att Last Updated kan lagras och visas som Date and Time.
 - Bekräftar hela kommunikationsvägen Python → MSAL → Microsoft Graph → SharePoint.
+
+
+## Version 5.15
+
+### Nytt
+- Integrerar Azure-analysen med SharePoint via Microsoft Graph.
+- Publicerar riktiga analysresultat från Azure VM-data till KyberTech-Python-Analysis.
+- Skickar Health Status, Environment Score och Alert Level till SharePoint.
+- Skickar antal Running och Stopped VM från den riktiga Azure-miljön.
+- Publicerar rekommendationer baserade på analysresultatet.
+- Skickar Last Updated som datum och tid.
+- Verifierar att SharePoint-data överensstämmer med aktuell VM-status i Azure.
+- Behåller automatiserade tester för analysmotorn med 3 godkända pytest-tester.
+- Fullbordar dataflödet Azure → Python → analysis.py → Microsoft Graph → SharePoint.
