@@ -458,3 +458,16 @@ Kommande utveckling
 - Tar bort duplicerad analyslogik från huvudprogrammet.
 - Lägger till .gitignore för Python- och pytest-cache.
 - Förbättrar programmets struktur, testbarhet och versionshantering.
+
+
+## Version 5.14
+
+### Nytt
+- Verifierar läsning av SharePoint-listan KyberTech-Python-Analysis via Microsoft Graph.
+- Verifierar listans kolumner och interna kolumnnamn.
+- Verifierar skrivning till SharePoint från Python via Microsoft Graph.
+- Genomför ett kontrollerat POST-test mot KyberTech-Python-Analysis.
+- Använder korrekta SharePoint-datatyper för Environment Score, Running VMs, Stopped VMs och Last Updated.
+- Verifierar att numeriska analysvärden kan skickas som Number-värden.
+- Verifierar att Last Updated kan lagras och visas som Date and Time.
+- Bekräftar hela kommunikationsvägen Python → MSAL → Microsoft Graph → SharePoint.
