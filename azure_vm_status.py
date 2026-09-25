@@ -1,4 +1,5 @@
 from analysis import analyze_environment
+from sharepoint import write_analysis_to_sharepoint
 
 import json
 import os
@@ -167,9 +168,7 @@ for vm in resources:
             vm["name"]
         )
 
-last_updated = datetime.now().strftime(
-    "%Y-%m-%d %H:%M"
-)
+last_updated = datetime.now().astimezone().isoformat()
 
 environment_status = {
     "health_status": health_status,
@@ -233,6 +232,9 @@ with open("sharepoint_payload.json", "w") as file:
         indent=4
     )
 
+write_analysis_to_sharepoint(
+    sharepoint_payload
+)
 
 print(resources)
 print(summary)
