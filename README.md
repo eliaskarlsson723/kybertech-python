@@ -1,4 +1,311 @@
-# KyberTech Python
+# KyberTech Hosting AB - Python Middleware & Analysis
+
+## Syfte
+
+Python-programmet är utvecklat som en del av skolprojektet KyberTech Hosting AB.
+
+Python-komponenten fungerar som ett middleware- och analyslager mellan Azure
+och SharePoint. Programmet hämtar riktig information om virtuella maskiner
+från Azure, bearbetar informationen i en separat analysmotor och publicerar
+resultatet till SharePoint via Microsoft Graph.
+
+I lösningen har komponenterna olika roller:
+
+- Azure är datakällan för den aktuella VM-miljön.
+- Python fungerar som middleware och kopplar samman Azure-data med analys och vidare publicering.
+- analysis.py fungerar som analysmotor och skapar beslutsunderlag.
+- Microsoft Graph används för kommunikationen mellan Python och SharePoint.
+- SharePoint används för att lagra och presentera analysresultatet för gruppens dashboard.
+
+Python-programmet kompletterar därför SharePoint istället för att duplicera
+dess funktion. SharePoint används för presentation och inventering medan
+Python bearbetar aktuell Azure-data och skapar Health Status, Environment
+Score, Alert Level och Recommendations.
+
+## Lösningsarkitektur
+
+Python-komponenten fungerar som middleware mellan projektets Azure-miljö
+och SharePoint samt som ett analyslager för den data som hämtas.
+
+Dataflödet i den färdiga prototypen är:
+
+Azure
+↓
+Azure SDK for Python
+↓
+azure_vm_status.py
+↓
+analysis.py
+↓
+Health Status
+Environment Score
+Alert Level
+Recommendations
+Critical Resources
+↓
+sharepoint.py
+↓
+Microsoft Graph
+↓
+SharePoint
+↓
+KyberTech-Python-Analysis
+
+## Python som middleware
+
+I projektet fungerar Python som middleware mellan Azure och SharePoint.
+
+Middleware innebär här att Python-komponenten ligger mellan olika delar av
+lösningen och ansvarar för att hämta, bearbeta och föra vidare information.
+
+I KyberTech-lösningen sker detta genom att Python:
+
+1. Hämtar aktuell VM-data från Azure via Azure SDK.
+2. Omvandlar Azure-informationen till projektets interna resursmodell.
+3. Skickar informationen till analysis.py.
+4. Beräknar Health Status, Environment Score, Alert Level och Recommendations.
+5. Förbereder resultatet för SharePoint.
+6. Autentiserar mot Microsoft Graph.
+7. Publicerar analysresultatet till KyberTech-Python-Analysis.
+
+Python fungerar därför både som integrationslager mellan systemen och som
+analysmotor för den data som passerar genom lösningen.
+
+## Funktioner
+
+Den färdiga Python-lösningen kan:
+
+- Hämta riktig VM-information från Azure.
+- Läsa aktuell Power State för virtuella maskiner.
+- Läsa region och DeviceType från Azure-data och taggar.
+- Identifiera Running och Stopped VM.
+- Beräkna Environment Score mellan 0 och 100.
+- Beräkna Health Status.
+- Klassificera Alert Level som Green, Yellow eller Red.
+- Generera rekommendationer baserat på VM-status.
+- Identifiera kritiska resurser.
+- Generera summary.json.
+- Generera sharepoint_payload.json.
+- Autentisera mot Microsoft Graph med MSAL.
+- Publicera analysresultatet till SharePoint-listan KyberTech-Python-Analysis.
+- Hantera vanliga Azure-fel på ett kontrollerat sätt.
+- Testa analysmotorn automatiskt med pytest.
+
+
+## Projektstruktur
+
+Python/
+├── Archive/
+│   └── äldre utvecklings- och integrationstester
+├── Tests/
+│   └── test_analysis.py
+├── .gitignore
+├── analysis.py
+├── azure_vm_status.py
+├── README.md
+├── sharepoint.py
+├── sharepoint_payload.json
+└── summary.json
+
+### Viktiga filer
+
+**azure_vm_status.py**
+Huvudprogrammet. Hämtar VM-data från Azure och startar analys- och 
+publiceringsflödet.
+
+**analysis.py**
+Innehåller den separerade analyslogiken och funktionen analyze_environment().
+
+**sharepoint.py**
+Ansvarar för autentisering mot Microsoft Graph och publicering av 
+analysresultatet till SharePoint.
+
+**Tests/test_analysis.py**
+Innehåller automatiserade tester för analysmotorn.
+
+**summary.json**
+Innehåller programmets fullständiga analysresultat.
+
+**sharepoint_payload.json**
+Innehåller den analysdata som används för SharePoint-integrationen.
+
+
+## Konfiguration
+
+Känsliga konfigurationsvärden hårdkodas inte i källkoden.
+
+Programmet använder följande miljövariabler:
+
+AZURE_SUBSCRIPTION_ID
+KYBERTECH_CLIENT_ID
+KYBERTECH_TENANT_ID
+
+Azure-autentisering sker med AzureCliCredential.
+
+Microsoft Graph-autentisering sker med MSAL och public client/device flow. 
+Ingen client secret används.
+
+
+## Automatiserade tester
+
+Analyslogiken testas med pytest.
+
+Testerna körs med:
+
+python -m pytest Tests/test_analysis.py -v --tb=short
+
+Följande scenarier testas:
+
+1. Alla VM är Running.
+2. En VM är Stopped.
+3. Alla VM är Stopped.
+
+Testerna verifierar bland annat:
+
+- Environment Score
+- Health Status
+- Alert Level
+- Running VMs
+- Stopped VMs
+- Recommendations
+
+Nuvarande resultat:
+
+3 passed
+
+
+## Felhantering
+
+Programmet innehåller strukturerad felhantering för bland annat:
+
+- Saknad AZURE_SUBSCRIPTION_ID.
+- Problem med Azure-autentisering.
+- Saknad eller felaktig Resource Group.
+- Nätverks- och Azure-fel.
+- Problem med att läsa status för en individuell VM.
+- Resource Group utan virtuella maskiner.
+
+Målet är att användaren ska få ett begripligt felmeddelande istället för 
+ett långt Python-traceback vid förväntade fel.
+
+
+## SharePoint och Microsoft Graph
+
+Analysresultatet publiceras till SharePoint-listan:
+
+KyberTech-Python-Analysis
+
+Följande analysvärden publiceras:
+
+- ResourceName
+- HealthStatus
+- EnvironmentScore
+- AlertLevel
+- RunningVMs
+- StoppedVMs
+- LastUpdated
+- Recommendations
+
+Integrationen har verifierats end-to-end med riktig Azure-data.
+
+VM-status har jämförts mot Azure och motsvarande analysresultat har verifierats 
+i SharePoint.
+
+
+## Säkerhet
+
+Autentiseringsuppgifter och secrets ska inte lagras i källkoden.
+
+Azure Subscription ID, Client ID och Tenant ID hanteras genom miljövariabler.
+
+Microsoft Graph-integrationen använder för närvarande bredare behörigheter än 
+vad som är önskvärt i en framtida produktionslösning. Under utvecklingen har 
+Graph-operationerna därför begränsats till den avsedda SharePoint-listan.
+
+En framtida lösning bör använda principen om minsta möjliga behörighet 
+(least privilege) och begränsa applikationens åtkomst till de resurser som 
+faktiskt behöver användas.
+
+
+## AI som utvecklingsstöd
+
+Jag hade ingen tidigare erfarenhet av Python när projektet startade och har 
+använt AI som stöd under utvecklingen.
+
+AI har bland annat använts för att förstå Python-struktur, felsöka problem, 
+diskutera API:er, Azure SDK, Microsoft Graph, autentisering, Git och automatiserade tester.
+
+Arbetssättet har varit iterativt:
+
+Idé
+↓
+AI-stöd
+↓
+Kod
+↓
+Test
+↓
+Fel och felsökning
+↓
+Ökad förståelse
+↓
+Feedback
+↓
+Refaktorering
+
+Ett konkret exempel är Azure-integrationen. En tidigare version använde Azure CLI 
+på ett sätt som innehöll en hårdkodad sökväg. Efter feedback refaktorerades 
+lösningen till Azure SDK for Python med AzureCliCredential.
+
+AI har därför fungerat som ett utvecklings- och lärandestöd samtidigt som 
+lösningen kontinuerligt har testats mot den riktiga projektmiljön.
+
+
+## Avgränsning och framtida utveckling
+
+Målet med projektet har varit att skapa en fungerande end-to-end-prototyp.
+
+Nuvarande lösning körs manuellt och omfattar VM-resurser. Projektet har medvetet 
+avgränsats för att prioritera en fungerande och testbar kärnlösning framför 
+ytterligare funktioner.
+
+Möjlig framtida utveckling skulle kunna vara:
+
+- Schemalagd körning.
+- Azure Functions eller annan Azure-hosting.
+- Managed Identity.
+- Mer begränsade Microsoft Graph-behörigheter enligt least privilege.
+- Analys av fler Azure-resurstyper.
+- Ytterligare automatiserade tester.
+
+Dessa funktioner ingår inte i den nuvarande prototypen.
+
+
+## Slutresultat
+
+Den färdiga Python-prototypen uppfyller projektets huvudsakliga tekniska mål:
+
+Azure
+↓
+Python
+↓
+analysis.py
+↓
+Microsoft Graph
+↓
+SharePoint
+
+Programmet hämtar riktig VM-data från Azure, analyserar miljön och publicerar 
+resultatet till KyberTech-Python-Analysis i SharePoint.
+
+Analysmotorn är separerad från Azure-integrationen och verifieras med 
+automatiserade pytest-tester.
+
+Det färdiga resultatet visar ett komplett dataflöde från molnresurs till 
+analys och vidare till presentation i gruppens lösning.
+
+
+# Versionshistorik
 
 ## Version 1.0
 
